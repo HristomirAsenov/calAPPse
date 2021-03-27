@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
-@import '../styles/variables.scss';
+@import 'styles/variables.scss';
 
 * {
     margin: 0;
@@ -9,18 +9,13 @@
     color: $primary;
 }
 
-.site-wrapper {
+.main-section {
+    width: 100%;
+}
 
-    background-color: $white;
-
-    .main-section {
-        width: 100%;
-    }
-    
-    .container {
-        max-width: 1440px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 15px;
-    }
+.container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
 }
