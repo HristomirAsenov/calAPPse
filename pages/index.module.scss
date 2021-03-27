@@ -1,48 +1,5 @@
 @import 'styles/variables.scss';
 
 .home-container {
-
-    .months {
-        padding-top: 10px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        color: $primary;
-
-        .month {
-            max-width: 400px;
-            width: 100%;
-            
-            min-height: 200px;
-            height: 100%;
-            
-            padding: 25px;
-            margin-bottom: 10px;
-
-            border: 2px solid $primary;
-            border-radius: 10px;
-
-            color: inherit;
-            text-align: center;
-
-            .month-link {
-                color: inherit;
-                font-weight: bold;
-                text-decoration: none;
-                border-bottom: 2px solid $primary;
-                display: block;
-                width: 100%;
-            }
-
-            &:hover {
-                background-color: $primary;
-                color: $white;
-
-                .month-link {
-                    border-bottom: 2px solid $red-600;
-                }
-            }
-        }
-    }
-
+    background-color: $white;
 }
