@@ -1,0 +1,9 @@
+@import 'styles/variables.scss';
+
+.main-header-section {
+    background-color: $white;
+
+    .main-header-container {
+        background-color: inherit;
+    }
+}
