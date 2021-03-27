@@ -6,17 +6,19 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
-    color: $primary-color;
+    color: $primary;
 }
 
 .site-wrapper {
+
+    background-color: $white;
 
     .main-section {
         width: 100%;
     }
     
     .container {
-        max-width: 1280px;
+        max-width: 1440px;
         width: 100%;
         margin: 0 auto;
         padding: 0 15px;
