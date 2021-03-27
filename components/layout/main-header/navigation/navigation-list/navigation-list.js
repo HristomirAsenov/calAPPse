@@ -5,13 +5,12 @@ import classes from './navigation-list.module.scss';
 const NavigationList = ({
     links,
 }) => (
-    <ul className={classes['navigation-list']}>
+    <ul className={ classes['navigation-list'] }>
         {
-            links.map(({ name, href }) => (
+            links.map((navLink) => (
                 <NavigationListItem
-                    name={name}
-                    href={href}
-                    key={ href }
+                    name={ navLink.name }
+                    { ...navLink }
                 />)
             )
         }

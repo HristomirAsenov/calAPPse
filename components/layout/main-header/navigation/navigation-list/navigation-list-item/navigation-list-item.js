@@ -5,10 +5,16 @@ import classes from './navigation-list-item.module.scss';
 const NavigationListItem = ({
     name,
     href,
+    prefix,
 }) => (
     <li className={ classes['navigation-list-item'] }>
         <Link href={ href }>
-            { name }
+            <a>
+                { prefix && prefix() }
+                <span>
+                    { name }
+                </span>
+            </a>
         </Link>
     </li>
 );
