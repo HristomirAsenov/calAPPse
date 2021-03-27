@@ -1,4 +1,4 @@
-import NavigationListItem from '../navigation-list-item';
+import NavigationListItem from './navigation-list-item';
 
 import classes from './navigation-list.module.scss';
 
