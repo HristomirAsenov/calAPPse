@@ -1,20 +1,15 @@
 @import '../styles/variables.scss';
 
-.home-section {
-
-    .home-container {
-        color: $primary;
-
-        .heading {
-            color: inherit;
-        }
-
-        .home-hero-banner {
-            display: block;
-            max-width: 1024px;
-            width: 100%;
-            margin: 0 auto;
-            border-radius: 10px;
-        }
+.home-container {
+    color: $primary;
+    .heading {
+        color: inherit;
+    }
+    .home-hero-banner {
+        display: block;
+        max-width: 1024px;
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 10px;
     }
 }

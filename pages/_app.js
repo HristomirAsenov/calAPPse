@@ -1,16 +1,11 @@
-import Navigation from '../components/navigation';
-import Footer from '../components/footer';
+import Layout from '../components/layout';
 
 import '../styles/globals.scss';
 
-function MyApp( { Component, pageProps } ) {
-    return (
-        <section className='site-wrapper'>
-            <Navigation />
-            <Component { ...pageProps } />
-            <Footer />
-        </section>
-    );
+function MyApp({ Component, pageProps }) {
+    return <Layout>
+        <Component { ...pageProps } />
+    </Layout>;
 }
 
 export default MyApp;
