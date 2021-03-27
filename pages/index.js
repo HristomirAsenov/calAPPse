@@ -1,8 +1,14 @@
+import classes from './index.module.scss';
+
 function HomePage() {
     return (
-        <section>
-            <div>
-                <h1>Home page so far...</h1>
+        <section className={ `${classes['home-section']} main-section` }>
+            <div className={ `${classes['home-container']} container` }>
+                <img
+                    className={classes['home-hero-banner']}
+                    src={'/images/home-hero-banner.jpg'}
+                    alt='calAPPse'
+                />
             </div>
         </section>
     );
