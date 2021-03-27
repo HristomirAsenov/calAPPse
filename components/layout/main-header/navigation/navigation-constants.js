@@ -4,7 +4,7 @@ export const MAIN_LINKS = [
         href: '/',
     },
     {
-        name: 'Save New Record',
+        name: 'Save Record',
         href: '/save-record',
         prefix: () => (
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
