@@ -1,0 +1,5 @@
+.main-site-content {
+    // 62px -> Navigation's height
+    // 52px -> Footer's height
+    min-height: calc(100vh - (62px + 52px));
+}
