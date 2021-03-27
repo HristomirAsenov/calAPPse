@@ -4,11 +4,7 @@ export const MAIN_LINKS = [
         href: '/',
     },
     {
-        name: 'SignIn',
-        href: '/sign-in',
-    },
-    {
-        name: 'SignUp',
-        href: '/sign-up',
+        name: 'Save New Record',
+        href: '/save-record',
     },
 ];
