@@ -1,14 +1,15 @@
 import { useRouter } from 'next/router';
+import { getDaysInMonth } from 'utils';
 
 function SelectedMonthPage() {
     const router = useRouter();
+    const { month } = router.query;
 
+    const daysInSelectedMonth = getDaysInMonth(month);
     return (
-        <section>
-            <div>
-                <h1>Selected Month page ({ router.query.month })</h1>
-            </div>
-        </section>
+        <div className='container'>
+            <h1>({ router.query.month }) - { daysInSelectedMonth }</h1>
+        </div>
     )
 }
 
