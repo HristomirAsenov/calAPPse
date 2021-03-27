@@ -1,0 +1,17 @@
+@import 'styles/variables.scss';
+
+.main-footer-section {
+
+    .main-footer-container {
+        text-align: center;
+        
+        .main-footer-heading {
+            padding: 15px 0;
+            font-weight: bold;
+            
+            span {
+                color: $red-600;
+            }
+        }
+    }
+}
