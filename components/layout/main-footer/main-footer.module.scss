@@ -8,9 +8,10 @@
         .main-footer-heading {
             padding: 15px 0;
             font-weight: bold;
+            color: $secondary;
             
             span {
-                color: $red-600;
+                color: $primary;
             }
         }
     }

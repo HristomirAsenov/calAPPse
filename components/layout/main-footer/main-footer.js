@@ -6,7 +6,7 @@ const MainFooter = () => {
         <section className={ `${classes['main-footer-section']} main-section` }>
             <div className={ `${classes['main-footer-container']} container` }>
                 <h3 className={ classes['main-footer-heading'] }>
-                    Stay focused with <span>calAPPse</span> &copy; { currentYear }
+                    Stay informed with <span>calAPPse</span> &copy; { currentYear }
                 </h3>
             </div>
         </section>
