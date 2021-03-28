@@ -12,9 +12,10 @@ function SelectedMonthPage() {
     const daysInSelectedMonth = getDaysInMonth(month);
     const days = Array.from([...Array(daysInSelectedMonth)].keys());
 
+    console.log(month);
     return (
         <div className={ `${classes['month-container']} container` }>
-            <h1>{ capitelizeString(month) }</h1>
+            <h1>{ month && capitelizeString(month) }</h1>
             <MonthDayList days={ days } />
         </div>
     )

@@ -21,6 +21,8 @@ const MonthListItem = ({
         }
     };
 
+    const capitalizedName = capitelizeString(name);
+
     return (
         <div className={ classes.month }>
             <Link
@@ -32,10 +34,10 @@ const MonthListItem = ({
                 } }
             >
                 <a
-                    title={ `Check ${capitelizeString(name)} records` }
+                    title={ `Check ${capitalizedName} records` }
                     className={ classes['month-link'] }
                 >
-                    { capitelizeString(name) }
+                    { capitalizedName }
                 </a>
             </Link>
             <SeasonIcon />

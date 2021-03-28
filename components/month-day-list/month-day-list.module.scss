@@ -2,10 +2,6 @@
 
 .month-days-container {
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
     flex-wrap: wrap;
-
-    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
-
-    border-radius: 10px;
 }
