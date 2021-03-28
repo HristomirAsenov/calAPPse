@@ -1,5 +1,7 @@
 import Link from 'next/link';
-import SvgIcon from '../svg-icon';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 import classes from './main-button.module.scss'
 
@@ -13,7 +15,7 @@ const MainButton = ({
         return (
             <Link href={ href }>
                 <a className={ classes['main-button'] }>
-                    <SvgIcon name='plus' />
+                    <FontAwesomeIcon icon={ faPlus } />
                     <span>{ children }</span>
                 </a>
             </Link>
@@ -25,7 +27,7 @@ const MainButton = ({
             className={ classes['main-button'] }
             onClick={ onClickHandler }
         >
-            <SvgIcon name='plus' />
+            <FontAwesomeIcon icon={ faPlus } />
             <span>{ children }</span>
         </button>
     );

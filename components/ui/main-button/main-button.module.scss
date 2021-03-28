@@ -14,15 +14,13 @@
     text-decoration: none;
     font-weight: bold;
 
-    width: 150px;
+    width: fit-content;
     font-size: 16px;
 
     transition: all 0.2s ease-in;
 
-    span {
-        flex-grow: 1;
-        display: block;
-        color: inherit;
+    svg {
+        color: $secondary;
     }
 
     &:hover {
