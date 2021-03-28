@@ -11,7 +11,17 @@ const MonthDayListItem = ({
     const { month } = router.query;
 
     const today = new Date();
-    const currentMonth = MONTHS.find((m) => m.name === month.toLocaleLowerCase());
+    
+    if(!month) {
+        return <p>Invalid month</p>;
+    };
+
+    const currentMonth = MONTHS.find((m) => m.name === month.toLowerCase());
+
+    if(!currentMonth) {
+        return <p>Invalid month</p>;
+    }
+ 
     const currentDate = new Date(today.getFullYear(), currentMonth.order - 1, day);
 
     const isToday = day === today.getDate() && currentMonth.order - 1 === today.getMonth();
