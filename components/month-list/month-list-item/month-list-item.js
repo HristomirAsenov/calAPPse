@@ -16,7 +16,10 @@ const MonthListItem = ({
                 },
             } }
         >
-            <a className={ classes['month-link'] }>
+            <a
+                title={ name }
+                className={ classes['month-link'] }
+            >
                 { capitelizeString(name) }
             </a>
         </Link>
