@@ -1,0 +1,11 @@
+@import 'styles/variables.scss';
+
+.month-days-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+
+    border-radius: 10px;
+}
