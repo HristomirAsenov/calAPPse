@@ -1,7 +1,20 @@
+@import 'styles/variables.scss';
+
 .svg-icon {
-    color: red;
+    display: block;
+    // original size = 20px
+    transform: scale(1.50); // 150% of original size
+    
+    &.primary {
+        path {
+            fill: $primary;
+        }
+    }
 
-    font-size: 35px;
-
-    width: 300px;
+    &.secondary {
+        path {
+            fill: $secondary;
+        }
+    }
 }
+

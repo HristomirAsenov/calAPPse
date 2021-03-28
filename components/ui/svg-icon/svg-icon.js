@@ -1,5 +1,7 @@
 import dynamic from 'next/dynamic';
 
+import classes from './svg-icon.module.scss';
+
 const getDynamicComponent = (type, name) => dynamic(
     () => import(`./icons/${type}/${name}.svg`),
     { loading: () => <p>...</p> }
@@ -8,13 +10,13 @@ const getDynamicComponent = (type, name) => dynamic(
 const SvgIcon = ({
     type = 'solid',
     name,
+    primary = false,
 }) => {
     const DynamicComponent = getDynamicComponent(type, name);
-    const style = {
-        // TODO
-    };
 
-    return <DynamicComponent { ...style } />
+    return <DynamicComponent
+        className={ `${classes['svg-icon']} ${classes[!primary ? 'secondary' : 'primary']}` }
+    />
 };
 
 export default SvgIcon;
