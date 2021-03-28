@@ -5,6 +5,9 @@ import {
     SLOGAN,
 } from './main-header-constants';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+
 import PitchingList from './pitching-list';
 import MainButton from 'components/ui/main-button';
 
@@ -27,7 +30,8 @@ const MainHeader = () => (
 
             <div className={ classes['save-record-button-container'] }>
                 <MainButton href='/save-record'>
-                    Save Record
+                    <FontAwesomeIcon icon={ faPlus } />
+                    <span>Save Today's Record</span>
                 </MainButton>
             </div>
         </div>
