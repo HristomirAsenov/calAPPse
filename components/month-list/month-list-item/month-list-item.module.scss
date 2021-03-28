@@ -33,6 +33,8 @@
         .month-link {
             border-bottom: 2px solid $secondary;
         }
+
+        transform: scale(1.05); // 105% of original size
     }
 
     transition: all 0.2s ease-in;
