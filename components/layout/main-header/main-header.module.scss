@@ -18,8 +18,10 @@
             font-weight: bold;
             text-decoration: none;
 
+            transition: all 0.2s ease-in;
+
             &:hover {
-                transform: scale(1.2);
+                color: $primary;
             }
         }
     }
