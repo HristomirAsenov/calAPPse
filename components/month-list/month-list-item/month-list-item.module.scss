@@ -10,7 +10,6 @@
     padding: 25px;
     margin-bottom: 10px;
 
-    border: 2px solid $primary;
     border-radius: 10px;
 
     color: inherit;
@@ -33,4 +32,7 @@
             border-bottom: 2px solid $secondary;
         }
     }
+
+    transition: all 0.2s ease-in;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
 }
