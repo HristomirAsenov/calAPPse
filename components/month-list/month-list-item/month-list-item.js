@@ -17,12 +17,13 @@ const MonthListItem = ({
             } }
         >
             <a
-                title={ name }
+                title={ `Check ${capitelizeString(name)} records` }
                 className={ classes['month-link'] }
             >
                 { capitelizeString(name) }
             </a>
         </Link>
+
     </div>
 );
 
