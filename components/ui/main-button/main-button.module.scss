@@ -9,6 +9,7 @@
     color: $primary;
 
     padding: 15px;
+    border: none;
     border-radius: 10px;
 
     text-decoration: none;
@@ -26,6 +27,7 @@
 
     &:hover {
         color: $secondary;
+        cursor: pointer;
 
         box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
     }
