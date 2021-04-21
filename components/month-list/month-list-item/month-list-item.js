@@ -14,24 +14,27 @@ const MonthListItem = ({
     const capitalizedName = capitelizeString(name);
 
     return (
-        <div className={ classes.month }>
-            <Link
-                href={ {
-                    pathname: '/months/[month]',
-                    query: {
-                        month: name,
-                    },
-                } }
+        <Link
+            href={ {
+                pathname: '/months/[month]',
+                query: {
+                    month: name,
+                },
+            } }
+        >
+            <a
+                className={ classes.month }
+                title={ `Check ${capitalizedName} records` }
             >
-                <a
-                    title={ `Check ${capitalizedName} records` }
+                <h3
                     className={ classes['month-link'] }
                 >
                     { capitalizedName }
-                </a>
-            </Link>
-            <SeasonIcon season={ season } />
-        </div>
+
+                </h3>
+                <SeasonIcon season={ season } />
+            </a>
+        </Link >
     );
 }
 
