@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { MONTHS, DAYS_OF_WEEK } from 'globalConstants';
@@ -11,27 +12,31 @@ const MonthDayListItem = ({
     const { month } = router.query;
 
     const today = new Date();
-    
-    if(!month) {
+
+    if (!month) {
         return <p>Invalid month</p>;
     };
 
     const currentMonth = MONTHS.find((m) => m.name === month.toLowerCase());
 
-    if(!currentMonth) {
+    if (!currentMonth) {
         return <p>Invalid month</p>;
     }
- 
+
     const currentDate = new Date(today.getFullYear(), currentMonth.order - 1, day);
+    const currentDay = currentDate.getDay();
 
     const isToday = day === today.getDate() && currentMonth.order - 1 === today.getMonth();
     const classNames = [classes['month-day'], isToday ? classes.today : ''].filter(Boolean).join(' ');
 
-    return (<div className={classNames }>
-        <time>
-            { `${day}`.padStart(2, '0') } - { DAYS_OF_WEEK[currentDate.getDay()] }
-        </time>
-    </div>);
+    return (< Link href={`/months/${currentMonth.name}/${day}`} 
+    >
+        <a className={ classNames }>
+            <time>
+                { `${day}`.padStart(2, '0') } - { DAYS_OF_WEEK[currentDay] }
+            </time>
+        </a>
+    </Link>);
 };
 
 export default MonthDayListItem;
