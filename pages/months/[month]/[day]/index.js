@@ -1,13 +1,23 @@
 import { useRouter } from 'next/router';
+import { capitelizeString } from 'utils';
+
+import classes from './index.module.scss';
 
 const SelectedMonthDayPage = () => {
     const router = useRouter();
     const { month, day } = router.query;
-    
+
+    const capitalizedMonth = capitelizeString(month);
+    const selectedDay = `${day}`.padStart(2, '0');
+    const currentYear = new Date().getFullYear();
+
     return (
-        <div className='container'>
-            <h1>Selected Month ({ month })</h1>
-            <h1>Selected Day  ({ day })</h1>
+        <div className={`container ${classes['selected-date-container']}`}>
+            <time
+                className={ classes['selected-date'] }
+            >
+                { `${selectedDay} ${capitalizedMonth} ${currentYear}` }
+            </time>
         </div>
     );
 };

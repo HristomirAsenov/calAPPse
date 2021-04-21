@@ -1,0 +1,20 @@
+@import 'styles/variables.scss';
+
+.selected-date-container {
+    min-height: calc(100vh - (390px));
+
+    .selected-date {
+        font-size: 48px;
+        font-weight: bold;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        transform: translateY(-50px);
+        max-width: fit-content;
+        padding: 15px;
+        background-color: $white;
+        color: $black;
+        border-radius: 15px;
+        border: 2px solid $primary;
+    }
+}
