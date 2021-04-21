@@ -15,10 +15,11 @@
         background-color: $white;
         color: $black;
         border-radius: 15px;
-        border: 2px solid $primary;
+        box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
     }
 
     .day-stages {
+        margin: 50px 0;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -29,21 +30,48 @@
             text-align: center;
             height: 100%;
 
+            transition: all 0.2s ease-in;
+            position: relative;
+
+            p {
+                display: none;
+                color: $white;
+                width: 100%;
+                font-size: 42px;
+                background-color: $black;
+                transition: all 0.2s ease;
+                border-radius: 5px;
+
+                span {
+                    display: block;
+                }
+            }
+
             .day-stage-img-container {
                 transition: all 0.2s ease-in;
-                opacity: 0.7;
-
-                &:hover{
-                    transform: scale(1.05); // 105% of original size
-                    cursor: pointer;
-                    opacity: 1;
-                }
+                opacity: 1;
                 
                 img {
                     width: 100%;
                     height: auto;
                     border-radius: 15px;
                     box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+                }
+            }
+
+            &:hover {
+
+                p {
+                    display: block;
+                    position: absolute;
+                    z-index: 9;
+                    transform: translateY(100px);
+                }
+
+                .day-stage-img-container {
+                    transform: scale(1.05); // 105% of original size
+                    cursor: pointer;
+                    opacity: 0.5;
                 }
             }
         }

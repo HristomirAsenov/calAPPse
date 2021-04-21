@@ -18,8 +18,12 @@ const SelectedMonthDayPage = () => {
             >
                 { `${selectedDay} ${capitalizedMonth} ${currentYear}` }
             </time>
+            <h2>When did you train?</h2>
             <section className={ classes['day-stages'] }>
                 <article>
+                    <p>Morning
+                        <span>(05:00 AM - 12:00 PM)</span>
+                    </p>
                     <div className={ classes['day-stage-img-container'] }>
                         <img
                             alt='Morning'
@@ -29,6 +33,9 @@ const SelectedMonthDayPage = () => {
                     </div>
                 </article>
                 <article>
+                    <p>Noon <span>
+                        (12:00 PM - 06:00 PM)</span>
+                    </p>
                     <div className={ classes['day-stage-img-container'] }>
                         <img
                             alt='Noon'
@@ -38,6 +45,9 @@ const SelectedMonthDayPage = () => {
                     </div>
                 </article>
                 <article>
+                    <p>Night
+                        <span>(after 06:00 PM)</span>
+                    </p>
                     <div className={ classes['day-stage-img-container'] }>
                         <img
                             alt='Night'
