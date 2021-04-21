@@ -17,4 +17,35 @@
         border-radius: 15px;
         border: 2px solid $primary;
     }
+
+    .day-stages {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        height: 100%;
+
+        article {
+            width: 30%;
+            text-align: center;
+            height: 100%;
+
+            .day-stage-img-container {
+                transition: all 0.2s ease-in;
+                opacity: 0.7;
+
+                &:hover{
+                    transform: scale(1.05); // 105% of original size
+                    cursor: pointer;
+                    opacity: 1;
+                }
+                
+                img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 15px;
+                    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+                }
+            }
+        }
+    }
 }
