@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { MONTHS } from 'globalConstants';
 import {
     PITCHING_PHRASES,
     SLOGAN,
@@ -21,9 +20,9 @@ const MainHeader = () => {
     const saveTodaysRecordHandler = () => {
         const today = new Date();
         const day = today.getDate();
-        const month = MONTHS.find(m => m.order === (today.getMonth() + 1));
+        const month = (today.toLocaleString('en-EN', { month: 'long' })).toLowerCase();
 
-        router.push(`/months/${month.name}/${day}`);
+        router.push(`/months/${month}/${day}`);
     };
 
     return (

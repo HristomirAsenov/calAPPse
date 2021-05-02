@@ -1,5 +1,3 @@
-import { MONTHS } from 'globalConstants';
-
 export const capitelizeString = (string) => {
     return string[0].toUpperCase().concat(string.slice(1).toLowerCase());
 };
@@ -9,10 +7,11 @@ export const capitelizeString = (string) => {
  * @param {Number} monthOrder 
  * @returns
  */
-export const getDaysInMonth = (month) => {
-    const selectedMonth = MONTHS.find(m => m.name === month);
+export const getDaysInMonth = (month, months) => {
+    const currentYear = new Date().getFullYear();
+    const selectedMonth = months.find(m => m.name === month);
 
     if (selectedMonth) {
-        return new Date(2021, selectedMonth.order, 0).getDate();
+        return new Date(currentYear, selectedMonth.order, 0).getDate();
     }
 };

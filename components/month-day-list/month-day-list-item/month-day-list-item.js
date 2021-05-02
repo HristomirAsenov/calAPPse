@@ -1,35 +1,26 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-
-import { MONTHS, DAYS_OF_WEEK } from 'globalConstants';
+                           
+import { DAYS_OF_WEEK } from 'globalConstants';
 
 import classes from './month-day-list-item.module.scss';
 
 const MonthDayListItem = ({
     day,
+    month,
 }) => {
-    const router = useRouter();
-    const { month } = router.query;
-
     const today = new Date();
 
     if (!month) {
         return <p>Invalid month</p>;
-    };
-
-    const currentMonth = MONTHS.find((m) => m.name === month.toLowerCase());
-
-    if (!currentMonth) {
-        return <p>Invalid month</p>;
     }
 
-    const currentDate = new Date(today.getFullYear(), currentMonth.order - 1, day);
+    const currentDate = new Date(today.getFullYear(), month.order - 1, day);
     const currentDay = currentDate.getDay();
 
-    const isToday = day === today.getDate() && currentMonth.order - 1 === today.getMonth();
+    const isToday = day === today.getDate() && month.order - 1 === today.getMonth();
     const classNames = [classes['month-day'], isToday ? classes.today : ''].filter(Boolean).join(' ');
 
-    return (< Link href={`/months/${currentMonth.name}/${day}`} 
+    return (< Link href={`/months/${month.name}/${day}`} 
     >
         <a className={ classNames }>
             <time>
