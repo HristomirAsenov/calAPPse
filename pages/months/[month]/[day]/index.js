@@ -1,11 +1,14 @@
-import { useRouter } from 'next/router';
-import { capitelizeString } from 'utils';
+import fs from 'fs/promises';
+import path from 'path';
+
+import { capitelizeString, getDaysInMonth } from 'utils';
 
 import classes from './index.module.scss';
 
-const SelectedMonthDayPage = () => {
-    const router = useRouter();
-    const { month, day } = router.query;
+const SelectedMonthDayPage = ({
+    month,
+    day,
+}) => {
 
     const capitalizedMonth = capitelizeString(month);
     const selectedDay = `${day}`.padStart(2, '0');
@@ -60,5 +63,43 @@ const SelectedMonthDayPage = () => {
         </div>
     );
 };
+
+export const getStaticProps = async (context) => {
+
+    const { month, day } = context.params;
+
+    return {
+        props: {
+            month,
+            day,
+        },
+    };
+};
+
+export const getStaticPaths = async () => {
+
+    const months = await getMonths();
+
+    const pathsWithParams = months.reduce((acc, month) => {
+        const daysInSelectedMonth = getDaysInMonth(month.name, months);
+        const days = Array.from([...Array(daysInSelectedMonth)].keys());
+
+        acc.push(...days.map(day => ({ params: { month: month.name, day: `${day + 1}` } })));
+
+        return acc;
+    }, []);
+
+    return {
+        paths: pathsWithParams,
+        fallback: false,
+    };
+}
+
+const getMonths = async () => {
+    const monthsPath = path.join(process.cwd(), 'globalConstants', 'months.json');
+    const jsonMonths = await fs.readFile(monthsPath);
+    return JSON.parse(jsonMonths);
+};
+
 
 export default SelectedMonthDayPage;
